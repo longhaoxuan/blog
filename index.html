@@ -1,14 +1,71 @@
 <html>
-<head>
-    <meta name="viewport" content="with=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-</head>
-<body>
-<div class="app">
 
-</div>
-<script src="http://along96.cn/js/vue.min.js"></script>
-<script type="text/javascript">
-    
-</script>
+<head>
+    <!-- 
+    # meta
+        ##  charset ：编码
+        ##  content ： http-equiv 或 name的值
+        ##  name:
+            ### keywords :关键字、
+            ### description :简介
+            ###  robots ：机器人向导
+                参数为 all ：文件将被检索，且页面上的链接可以被查询；
+                参数为 none ：文件将不被检索，且页面上的链接不可以被查询； 
+                参数为 index ：文件将被检索； 
+                参数为 follow ：页面上的链接可以被查询； 
+                参数为 noindex ：文件将不被检索，但页面上的链接可以被查询； 
+                参数为 nofollow ：文件将被检索，但页面上的链接不可以被查询；
+            ### author  作者
+            ### copyright  版权
+            ### generator ：编辑器
+            ### revisit-affter :重访
+        ## http-equiv
+            ### expires :期限
+                表示网页缓存的过期时间，可以写0，必须使用GMT格式
+            ###  Pragma :cache模式
+                no-cache 禁止本地浏览器缓存
+            ###  Refresh
+
+    -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+    <meta name="author" content="aLonG,一个人的老大">
+    <meta name= "copyright" content="版权没有版权"> 
+    <meta name="generator" content="vs code">
+    <meta name="revisit-affter" content="1month">
+    <meta http-equiv="refresh"content="0; url=http://www.along96.cn/blog"/>
+
+
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* justify-content: center;sss */
+
+        }
+    </style>
+    <!-- <meta name="viewport"
+        content="with=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> -->
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{massage}}</h1>
+        {{massage}}
+
+    </div>
+    <script src="http://along96.cn/js/vue.min.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                massage: 'hello woradffffffffffffffffffffffffffffffffadsfasdfaaaaaaaaaaaaaaaaaaaaaaaasdfadsfffffffld'
+            }
+        })
+    </script>
 </body>
+
 </html>
