@@ -69,7 +69,48 @@
             margin: 0;
             padding: 0;
             display: flex;
-            /* justify-content: center;sss */
+            /* justify-content: center; */
+            justify-content: space-between;
+            flex-direction: column;
+            background: url(http://along96.cn/image/IMG_20190928_070820.jpg);
+            background-color: rosybrown;
+            background-size: cover;
+            height: 100%;
+        }
+        h1 {
+            color:#FFF;
+        }
+
+        footer {
+            padding: 12 0;
+            flex: 1;
+            justify-content: center;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.12);
+        }
+
+        #footer {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: x-small;
+        }
+        #hi{
+            /* height: 100%; */
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            
+            /* top: 50%; */
+        }
+
+        #footer p a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+        }
+
+        #lovelycat{
+            margin-left: 66%;
+            border: 0;
 
         }
     </style>
@@ -78,29 +119,40 @@
 </head>
 
 <body>
-    <div id="app">
-        <h1>{{massage}}</h1>
-        {{massage}}
-
+    <div id="app" v-bind:style="appcss">
+        <div id="hi">
+            <h1>{{massage}}</h1>
+            <!-- {{massage}} -->
+        </div>
     </div>
+    <iframe src="https://zhanyuzhang.github.io/lovely-cat/cat.html" id="lovelycat"></iframe>
     <footer>
-        <p>
-            "Copyright 2019 "
-            <a href="http://alog96.cn">一个人的老大</a>
-            . All Rights Reserved.
-            <br>
-            <a href="http://beian.miit.gov.cn" rel="externla nofollow" target="_blank">备案号（京ICP备19011071号-1）</a>
-        </p>
+        <div id="footer">
+            <p>
+                Copyright 2019
+                <a href="http://along96.cn"  rel="externla nofollow">一个人的老大</a>
+                . All Rights Reserved.
+                <br>
+                <a href="http://beian.miit.gov.cn" rel="externla nofollow" target="_blank">备案号（京ICP备19011071号-1）</a>
+            </p>
+        </div>
     </footer>
     <script src="http://along96.cn/js/vue.min.js"></script>
     <script type="text/javascript">
         var app = new Vue({
             el: '#app',
             data: {
-                massage: 'hello woradffffffffffffffffffffffffffffffffadsfasdfaaaaaaaaaaaaaaaaaaaaaaaasdfadsfffffffld'
+                massage: '做自己的信仰',
+                appcss: {
+                    display:'flex',
+                    justifyContent: 'center',
+                    height: '100%',
+                    alignItems: 'center'
+                }
             }
         })
     </script>
 </body>
 
 </html>
+
