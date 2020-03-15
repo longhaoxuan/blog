@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS编码技巧</title>
+    <style>
+        li p{
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS编码技巧</h1>
+    <div>
+        <li>回退机制
+            <p> 1.浏览器层叠机制,标准的语法写在最后</p>
+            <p> 2. <a href="Modernizr.cn">Modernizr</a>一个检测浏览器是否支持某些特性的库</p>
+            <p> 3.不确定的属性添加
+                ```@supports(){
+                    
+                }
+                ```
+            </p>
+            <p> 4. 自己写个js TODO:日后补充背下来</p>
+        
+        </li>
+        <li>CSS标准
+            <p>1.ED 编辑草案</p>
+            <p>2.FPWD 首个公开草案</p>
+            <p>3.WD 工作草案</p>
+            <p>4.CR 候选推荐规范</p>
+            <p>5.PR 提名推荐规范</p>
+            <p>6.REC 正式推荐规范</p>
+        </li>
+        <li>浏览器前缀
+            <p>1.Firefox -moz-</p>
+            <p>2.IE -ms-</p>
+            <p>3.Opera -o-</p>
+            <p>4.Safari Chrome  -webkit-</p>
+        </li>
+        <li>浏览器前缀结局方案
+            <p>1.CSS3Plesase 网站会生成前缀,成本高,过气了</p>
+            <p>2.AUTOPrefixe采用caniuse的数据库添加前缀,类似预编译</p>
+            <p>3.-prefix-free,github 作者写的</p>
+            <p>4.Slylus,LESS,Sass等预处理器 mixin属性</p>
+        </li>
+        
+    </div>
+</body>
+</html>
