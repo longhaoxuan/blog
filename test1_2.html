@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Css编码技巧</title>
+    <style>
+        .first{
+            padding:6px 16px;
+            border: 1px solid #446d88;
+            background: #58a linear-gradient(#777777,#58a);
+            border-radius: 4px;
+            color: white;
+            text-shadow: 0 -1px 1px #334466;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .second{
+                padding:.3em .8em;
+                border: 1px solid #446d88; 
+                background: #58a linear-gradient(#777777,#58a);
+                border-radius: .2em ;/*边框圆角*/
+                box-shadow:0 .05em 0.05em grey;
+                color: white;/*字体颜色*/
+                text-shadow: 0 .05em .05em #334466;
+                font-size: 150%;
+                line-height: 1.5;
+            }
+            .third{
+                padding:.3em .8em;
+                border: 1px solid #446d88; 
+                background: green linear-gradient(hsla(0,0%,100%,.2),transparent);
+                box-shadow:0 .05em .05em rgba(0,0,0,0.5);
+                border-radius: .2em ;/*边框圆角*/
+                color: white;/*字体颜色*/
+                text-shadow: 0 .05em .05em rgba(0,0,0,0.3);
+                font-size: 150%;
+                line-height: 1.5;
+            }
+    </style>
+</head>
+<body>
+
+    <p>1.尽量减少改动时要编辑的地方 </p>
+    <p>2.某些值互相依赖,要表现出来</p>
+    <p>3.确定不变的特效写死了</p>
+
+    <div>
+        <button class="first">按钮</button>
+        <pre>
+            .first{
+                padding:6px 16px; //内边距离,撑起父类
+                border: 1px solid #446d88; //边框(宽度,样式,颜色)
+                background: #58a linear-gradient(#777777,#58a);
+                /*背景颜色 linear-gradient渐变可以设置渐变方向 默认上下*/
+                border-radius: 4px;//边框圆角
+                box-shadow:00 -1px 1px grey;
+                color: white;//字体颜色
+                text-shadow: 0 -1px 1px #334466;
+                /*text-shadow: h-shadow v-shadow blur color; (x偏移,y偏移,模糊度,颜色)*/
+                font-size: 20px;//字体大小
+                line-height: 30px;//行高
+            }
+        </pre>
+    </div>
+
+    <hr>
+    <h2>优化</h2>
+
+        <p>1.字体使用百分比,或em单位(如果希望根据父级元素自适,用em,如果根据根节点适应,用rem) </p>
+        <p>2.行高和字号的关系字号</p>
+        <p>3.确定变化的元素</p>
+       
+        <button class="second">按钮</button>
+        <pre>
+            .second{
+                padding:.3em .8em;
+                border: 1px solid #446d88; 
+                background: #58a linear-gradient(#777777,#58a);
+                border-radius: .2em ;//边框圆角
+                box-shadow:0 .05em 0.05em grey;
+                color: white;//字体颜色
+                text-shadow: 0 .05em .05em #334466;
+                /*text-shadow: h-shadow v-shadow blur color; (x偏移,y偏移,模糊度,颜色)*/
+                font-size: 150%;//字体大小
+                line-height: 1.5;//行高
+            }
+        
+        </pre>
+
+        <p>4.颜色的变化,覆盖一层透明颜色改变明暗,然后改变被金个颜色即可</p>
+        <pre>
+            background: green linear-gradient(hsla(0,0%,100%,.2),transparent)
+            box-shadow:0 .05en .05em rgba(0,0,0,0.5)
+        </pre>
+        <button class="third">按钮</button>
+        <p></p>
+
+</body>
+</html>
