@@ -8,6 +8,7 @@
     <style>
         body {
             background-color: pink;
+            padding: 0% 15% 10%;
         }
 
         .bordertest {
@@ -19,11 +20,67 @@
             /* height: 450px; */
             /* width: 450px; */
         }
+
+        .boder-box-shadow {
+            padding: .3em;
+            background: yellow;
+            box-shadow: 0 0 0 5px coral,
+                0 0 0 15px cyan,
+                0 2px 5px 15px rgba(0, 0, 0, .6);
+            margin: 25px 10em 10px 10px;
+        }
+
+        .border-outline {
+            border: 20px solid darkviolet;
+            outline: 5px dotted deeppink;
+            outline-offset: -10px;
+            margin: 10px 10em 10px 10px;
+        }
+
+        .radius {
+            background: tan;
+            border-radius: .6em;
+            padding: 1em;
+            box-shadow: 0 0 0 .4em teal;
+            outline: .6em solid teal;
+            margin-bottom: 3em;
+        }
+
+        .linear {
+
+            height: 500px;
+        }
+
+        .linear>.stripes {
+            height: 200px;
+            width: 400px;
+            float: left;
+            background: linear-gradient(yellow 50%, blue 0);
+            /* DRY 小技巧，第二个写0便会少一个参数 */
+            background-size: 100% 6em;
+        }
+
+        .linear>.vertical {
+            margin: 0 5em;
+            height: 200px;
+            width: 200px;
+            float: left;
+            background: linear-gradient(90deg, rgb(243, 243, 138) 50%, rgb(75, 209, 250) 50%);
+            background-size: 4em 100%;
+        }
+
+        .linear>.Diagonal {
+            height: 200px;
+            width: 200px;
+            float: left;
+            background: linear-gradient(45deg,rgb(243, 243, 138) 25%, rgb(75, 209, 250) 0 , rgb(75, 209, 250) 50%,rgb(243, 243, 138) 0, rgb(243, 243, 138) 75%,rgb(75, 209, 250) 75%);
+            background-size: 4em 4em;
+        }
     </style>
 </head>
 
 <body>
-    <h1>背景与边框</h1>
+    <h1>1.背景与边框</h1>
     <hr>
     <h2>半透明边框</h2>
     <div class="bordertest">
@@ -31,6 +88,64 @@
         <p>添加background-clip: padding-box;</p>
         <p>background-clip：背景颜色绘制区域</p>
     </div>
+    <hr>
+    <h2>2.多重边框</h2>
+    <div class="borders">
+        <p>1.border-image添加边框</p>
+        <p>2.额外的div</p>
+        <p>3.使用:before属性,hock方式</p>
+        <p>4.box-shadow</p>
+        <p>5.outline</p>
+
+        <div class="boder-box-shadow">
+            <h3>box-shadow</h3>
+            <p> box-shadow: h-shadow v-shadow blur spread color inset;(x偏移，Y偏移，模糊距离，扩展大小，颜色，内绘制)</p>
+            <p>box-shadow 会增加元素大小,会超出margin，增加的部分不会触发鼠标时间；可以通过inset绘制在内圈</p>
+        </div>
+        <div class="border-outline">
+            <h3>outline</h3>
+            <p>outline:width style width</p>
+            <p>只能增加一层边框，可以通过outline-offset生成缝边效果,同样会超出margin（具体看两个边框的大小问题）</p>
+            <p>只能绘制矩形描边，不会贴合border-radius效果</p>
+        </div>
+    </div>
+    <hr>
+    <h2>3.灵活的背景定位</h3>
+        <div class="backgrounds">
+            <p>1.background-position:25% 75% 改变背景图片偏移量</p>
+            <p>2.background-origin:默认是padding-box，可以更改（盒模型中top left等的参照坐标）</p>
+            <p>3.calc(100% - 20px)函数，运算符号前后加空格</p>
+        </div>
+        <hr>
+        <h2>4. 边框圆角</h3>
+            <div class="radius">
+                <p>outline不回帖和圆角，box-shadow会。outline会在box-shadow上层</p>
+                <p>要实现方框内部有圆角，需要outline和box-shadow配合。两者的宽度相等会出现渲染异常，所以需要计算box-shadow宽度</p>
+                <p>1.outline:width > box-shadow:width > (√2-1)r</p>
+                <p>2.根据上面公式，局限性outline的宽度必须大于(√2-1)r</p>
+            </div>
+            <hr>
+            <h2>5.条纹背景</h2>
+            <div class="linear">
+                <p>1.background-size:背景尺寸，（大小/百分比/cover/contain/precentage）</p>
+                <p>2.background:linear-gradient()条形渐变</p>
+                <p>radial-gradient()圆型渐变</p>
+                <div class="stripes">
+                    <p> DRY 小技巧,为了少维护个参数</p>
+                    <p>background: linear-gradient(yellow 50%, blue 50%);</p>
+                    <p>background: linear-gradient(yellow 50%, blue 0);</p>
+                    <p>repeating-radial-gradient()</p>
+                </div>
+                <div class="vertical">
+                    <p>1.加个旋转角度</p>
+                    <p>2.background-size的值颠倒</p>
+                    <p>background: linear-gradient(90deg ，yellow 50%, blue 50%);</p>
+                </div>
+                <div class="Diagonal ">
+                    旋转45deg
+                </div>
+            </div> 
+
 
 </body>
 
