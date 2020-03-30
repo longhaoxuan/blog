@@ -73,8 +73,40 @@
             height: 200px;
             width: 200px;
             float: left;
-            background: linear-gradient(45deg,rgb(243, 243, 138) 25%, rgb(75, 209, 250) 0 , rgb(75, 209, 250) 50%,rgb(243, 243, 138) 0, rgb(243, 243, 138) 75%,rgb(75, 209, 250) 75%);
+            background: linear-gradient(45deg, 
+                        rgb(243, 243, 138) 25%, 
+                        rgb(75, 209, 250) 0,
+                        rgb(75, 209, 250) 50%,
+                        rgb(243, 243, 138) 0, 
+                        rgb(243, 243, 138) 75%, 
+                        rgb(75, 209, 250) 75%);
             background-size: 4em 4em;
+        }
+
+        .linear>.best_stripes {
+            margin: 0 4em;
+            height: 200px;
+            width: 300px;
+            float: left;
+            background: repeating-linear-gradient(60deg, 
+            rgb(243, 243, 138),
+            rgb(243, 243, 138) 15px, 
+            rgb(75, 209, 250) 0, 
+            rgb(75, 209, 250) 30px);
+            /* background-size: 4em 4em; */
+        }
+
+        .linear>.transparent {
+            margin: 0 -200px 0 4em;
+            height: 200px;
+            width: 200px;
+            float: left;
+            background: #58a;
+            background-image:repeating-linear-gradient(60deg,
+                             hsla(0,0%,100%,.1),
+                             hsla(0,0%,100%,.1) 15px,
+                              transparent 0,
+                              transparent 30px);
         }
     </style>
 </head>
@@ -144,7 +176,18 @@
                 <div class="Diagonal ">
                     旋转45deg
                 </div>
-            </div> 
+
+                <div class="best_stripes">
+                    <p>repeating-radial-gradient:循环加强版</p>
+                    <p>1.维护时减少了颜色的改动位置</p>
+                    <p>2.线条宽度可指定</p>
+                    <p>3.随心所欲改变角度</p>
+                    <p>4.水平垂直用前面方法</p>
+                </div>
+                <div class="transparent">
+                    <p>利用透明,同色系条纹</p>
+                </div>
+            </div>
 
 
 </body>
