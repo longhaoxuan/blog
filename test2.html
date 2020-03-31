@@ -108,6 +108,35 @@
                               transparent 0,
                               transparent 30px);
         }
+        .clip_origin{
+            width: 600px;
+            height: 400px;
+            padding: 1em;
+            border: 6em solid transparent;
+            background: linear-gradient(white,white),
+            url(https://tse4-mm.cn.bing.net/th?id=OIP.dar9hzjr7Fu_htkjiYFwOAHaFj&pid=Api&rs=1);
+            background-origin: border-box;
+            background-clip: padding-box,border-box;
+            background-size: 100% 100%;
+        }
+        @keyframes ants { to { background-position: 100% } }
+        .email{
+            width: 200px;
+            height: 200px;
+            padding: 1em;
+            border: 1em solid transparent;
+            background: linear-gradient(white,white) padding-box,
+            repeating-linear-gradient(-45deg,
+                                    red 0,red 12.5%,
+                                    transparent 0,transparent 25%,
+                                    #58a 0,#58a 37.5% ,
+                                    transparent 0,transparent 50%)
+                                     0 / 6em 6em ; 
+            /* background-origin: border-box; */
+            /* background-clip: padding-box,border-box; */
+            /* background-size: 100% 100%; */
+            animation: ants 2s linear infinite;
+        }
     </style>
 </head>
 
@@ -188,8 +217,22 @@
                     <p>利用透明,同色系条纹</p>
                 </div>
             </div>
+            <hr>
+            <h2>伪随机</h2>
+            <div>
+                
+            </div>
+            <hr>
+            <h2>连续的图片边框</h2>
+            <div>
+                <div class="clip_origin">
 
+                </div>                
+                <div class="email">
 
+                </div>
+            </div>
+            
 </body>
 
 </html>
